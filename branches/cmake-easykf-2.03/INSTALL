@@ -1,0 +1,36 @@
+===============================================================================
+                             EasyKF : C++ Kalman Filter library
+                                 (c) Jeremy Fix 2011-2012
+===============================================================================
+
+Software/Hardware requirements
+------------------------------
+
+Supported operating systems
++++++++++++++++++++++++++++
+
+The library has been developed and tested under Linux x86 with Fedora 14, 16. There is certainly no reason that it fails to compile under other Linux distributions. I actually don't know if it works on other operating systems.
+
+Dependencies
++++++++++++++++++++++++++++
+
+- Gnu Scientific Library (GSL), 1.10 or + , see http://www.gnu.org/software/gsl/
+
+Installation
+------------
+
+Manually
+++++++++
+
+How to with CMake
+
+
+Packages manager
+++++++++++++++++
+
+Packages for several distributions are provided.
+
+Authors
+-------
+
+* Jeremy Fix
