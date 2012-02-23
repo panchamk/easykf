@@ -23,6 +23,15 @@ ELSE()
 
   ADD_CUSTOM_TARGET(apidoc ALL DEPENDS ${DOXYGEN_OUTPUT})
 
+  FILE(GLOB_RECURSE doc_files RELATIVE ${APIDOC_DIR} ${APIDOC_DIR}/*)
+  FOREACH(file ${doc_files})
+     GET_FILENAME_COMPONENT(file_prefix ${file} PATH)
+     INSTALL(FILES ${APIDOC_DIR}/${file}
+             DESTINATION share/doc/easykf/${file_prefix})
+  ENDFOREACH(file)
+
+
+
 ENDIF()
 
 #install(FILES ${CMAKE_CURRENT_BINARY_DIR}/easykf.pc
