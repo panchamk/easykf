@@ -1,4 +1,4 @@
-CMAKE_MINIMUM_REQUIRED( VERSION 2.8.5 )
+CMAKE_MINIMUM_REQUIRED( VERSION 2.8.4 )
 
 set(PACKAGE_NAME easykf)
 set(PACKAGE_VERSION 2.03)
@@ -15,4 +15,9 @@ link_directories(${GSL_LINK_DIRECTORIES})
 
 add_subdirectory (src)
 add_subdirectory (examples)
+add_subdirectory (doc)
 
+configure_file(easykf.pc.in easykf.pc)
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/easykf.pc
+DESTINATION lib/pkgconfig
+)

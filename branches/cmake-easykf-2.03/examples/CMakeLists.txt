@@ -17,3 +17,8 @@ foreach(f ${USAGE_EXAMPLES})
     target_link_libraries (${f} ${LIBS_FOR_EXAMPLE})	
 endforeach(f) 
 
+foreach(f ${USAGE_EXAMPLES})
+    install(PROGRAMS ${CMAKE_BINARY_DIR}/examples/${f} 
+            DESTINATION bin
+            RENAME easykf-${f})
+endforeach(f) 
