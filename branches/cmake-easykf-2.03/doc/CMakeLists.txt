@@ -23,11 +23,11 @@ ELSE()
 
   ADD_CUSTOM_TARGET(apidoc ALL DEPENDS ${DOXYGEN_OUTPUT})
 
-  FILE(GLOB_RECURSE doc_files RELATIVE ${APIDOC_DIR} ${APIDOC_DIR}/*)
+  FILE(GLOB_RECURSE doc_files RELATIVE ${APIDOC_DIR}/html ${APIDOC_DIR}/html/*)
   FOREACH(file ${doc_files})
      GET_FILENAME_COMPONENT(file_prefix ${file} PATH)
-     INSTALL(FILES ${APIDOC_DIR}/${file}
-             DESTINATION share/doc/easykf/${file_prefix})
+     INSTALL(FILES ${APIDOC_DIR}/html/${file}
+             DESTINATION share/doc/easykf/html/${file_prefix})
   ENDFOREACH(file)
 
 
