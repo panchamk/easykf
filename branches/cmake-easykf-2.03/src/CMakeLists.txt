@@ -21,6 +21,6 @@ add_library(
 
 # Installation targets
 install (TARGETS easykf 
-	 DESTINATION lib)
+	 DESTINATION ${LIB_INSTALL_DIR})
 install (FILES ${headers_files} 
-	 DESTINATION include/easykf)
+	 DESTINATION ${INCLUDE_INSTALL_DIR})

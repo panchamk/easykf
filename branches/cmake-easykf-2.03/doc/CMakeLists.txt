@@ -1,7 +1,3 @@
-#FIND_PROGRAM(DOXYGEN_CONFIG doxygen
-#      /usr/bin/
-#)
-
 FIND_PACKAGE(Doxygen)
 IF(NOT DOXYGEN_FOUND)
     message("Doxygen not found, I will not generate/install the documentation")
@@ -30,10 +26,5 @@ ELSE()
              DESTINATION share/doc/easykf/html/${file_prefix})
   ENDFOREACH(file)
 
-
-
 ENDIF()
 
-#install(FILES ${CMAKE_CURRENT_BINARY_DIR}/easykf.pc
-#DESTINATION lib/pkgconfig
-#)
