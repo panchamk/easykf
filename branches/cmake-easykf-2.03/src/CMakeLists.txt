@@ -12,8 +12,6 @@ file(
 	*.h
 )
 
-#set(LIBRARY_OUTPUT_PATH lib/${CMAKE_BUILD_TYPE})
-
 # Define our library 
 add_library(
 	easykf
@@ -22,5 +20,7 @@ add_library(
 )
 
 # Installation targets
-install (TARGETS easykf DESTINATION lib)
-install (FILES ${headers_files} DESTINATION include/easykf)
+install (TARGETS easykf 
+	 DESTINATION lib)
+install (FILES ${headers_files} 
+	 DESTINATION include/easykf)

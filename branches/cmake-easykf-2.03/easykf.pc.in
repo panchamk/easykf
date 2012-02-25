@@ -1,7 +1,6 @@
 Name: EasyKF
-Description: C++ Library for Extended, Unscented Kalman Filters
-Version: ${PACKAGE_VERSION}
+Description: "C++ Library for Extended, Unscented Kalman Filters"
+Version: @PACKAGE_VERSION@
 Requires: gsl
-Libs: -L${CMAKE_INSTALL_PREFIX}/lib -leasykf -lm 
-Cflags: -I${CMAKE_INSTALL_PREFIX}/include/
-
+Libs: -L@CMAKE_INSTALL_PREFIX@/lib -leasykf
+Cflags: -I@CMAKE_INSTALL_PREFIX@/include
