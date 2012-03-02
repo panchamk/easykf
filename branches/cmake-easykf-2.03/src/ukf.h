@@ -35,7 +35,7 @@
  * \example example-009.cc
  */
 
-/*! \mainpage Unscented Kalman Filter
+/*! \mainpage Kalman Filters
  *
  * \section intro_sec Introduction
  *
