@@ -1,3 +1,26 @@
+/* Copyright (c) 2011-2012, Jérémy Fix. All rights reserved. */
+
+/* Redistribution and use in source and binary forms, with or without */
+/* modification, are permitted provided that the following conditions are met: */
+
+/* * Redistributions of source code must retain the above copyright notice, */
+/* this list of conditions and the following disclaimer. */
+/* * Redistributions in binary form must reproduce the above copyright notice, */
+/* this list of conditions and the following disclaimer in the documentation */
+/* and/or other materials provided with the distribution. */
+/* * None of the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission. */
+
+/* THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS "AS IS" AND */
+/* ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED */
+/* WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE */
+/* DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE */
+/* FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL */
+/* DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR */
+/* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER */
+/* CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, */
+/* OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE */
+/* OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
+
 /* In this example, we use EKF for state/parameter estimation in order to estimate the state and parameters of a Lorentz attractor */
 
 #include <cstdlib>
@@ -186,8 +209,8 @@ int main(int argc, char* argv[]) {
     xi->data[4] = RHO;
     xi->data[5] = BETA;
 
-    std::ofstream outfile("Output/example-009.data");
-    std::ofstream outfile_rms("Output/example-009-rms.data");
+    std::ofstream outfile("example-009.data");
+    std::ofstream outfile_rms("example-009-rms.data");
     double rms= 0.0;
     double errorBound = NOISE_AMPLITUDE/2.0;
     int count_time=0;
@@ -266,9 +289,9 @@ int main(int argc, char* argv[]) {
     std::cout << " Run on " << epoch << " epochs ;" <<  std::scientific << total / double(epoch) << " s./step " << std::endl;
     printf("I found the following parameters : %e %e %e ; The true parameters being : %e %e %e \n", s.xk->data[3], s.xk->data[4],s.xk->data[5],SIGMA, RHO, BETA);
 
-    std::cout << " Outputs are saved in Output/example-009*.data " << std::endl;
+    std::cout << " Outputs are saved in example-009*.data " << std::endl;
     std::cout << " You can plot them using e.g. gnuplot : " << std::endl;
-    std::cout << " gnuplot Data/plot-example-009.gplot ; gv Output/example-009-rms.ps ; gv Output/example-009-Lorentz.ps " << std::endl;
+    //std::cout << " gnuplot Data/plot-example-009.gplot ; gv Output/example-009-rms.ps ; gv Output/example-009-Lorentz.ps " << std::endl;
 
     /***********************************************/
     /****            Free the memory            ****/

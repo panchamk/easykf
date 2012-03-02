@@ -1,3 +1,26 @@
+/* Copyright (c) 2011-2012, Jérémy Fix. All rights reserved. */
+
+/* Redistribution and use in source and binary forms, with or without */
+/* modification, are permitted provided that the following conditions are met: */
+
+/* * Redistributions of source code must retain the above copyright notice, */
+/* this list of conditions and the following disclaimer. */
+/* * Redistributions in binary form must reproduce the above copyright notice, */
+/* this list of conditions and the following disclaimer in the documentation */
+/* and/or other materials provided with the distribution. */
+/* * None of the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission. */
+
+/* THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS "AS IS" AND */
+/* ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED */
+/* WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE */
+/* DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE */
+/* FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL */
+/* DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR */
+/* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER */
+/* CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, */
+/* OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE */
+/* OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
+
 /* In this example, we use a 2-12-2 MLP network to learn the Mackay Robot arm data  */
 /* Here , we consider a vectorial output, it extends example-004                    */
 /* In addition to the weights and biases, we also parametrize the transfer function */
@@ -237,9 +260,9 @@ int main(int argc, char* argv[]) {
     /****     Save the results                  ****/
     /***********************************************/
 
-    std::ofstream outfile("Output/example-005.data");
+    std::ofstream outfile("example-005.data");
     std::cout << " You can plot them using e.g. gnuplot : " << std::endl;
-    std::cout << " gnuplot Data/plot-example-005.gplot ; gv Output/example-005-y1.ps ; gv Output/example-005-y2.ps " << std::endl;
+    //std::cout << " gnuplot Data/plot-example-005.gplot ; gv Output/example-005-y1.ps ; gv Output/example-005-y2.ps " << std::endl;
     for(unsigned int i = 0 ; i < samples.size() ; i++)
     {
         gsl_vector_set(xi, 0, samples[i].theta);

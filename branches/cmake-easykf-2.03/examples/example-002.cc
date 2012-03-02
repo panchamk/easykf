@@ -1,3 +1,27 @@
+/* Copyright (c) 2011-2012, Jérémy Fix. All rights reserved. */
+
+/* Redistribution and use in source and binary forms, with or without */
+/* modification, are permitted provided that the following conditions are met: */
+
+/* * Redistributions of source code must retain the above copyright notice, */
+/* this list of conditions and the following disclaimer. */
+/* * Redistributions in binary form must reproduce the above copyright notice, */
+/* this list of conditions and the following disclaimer in the documentation */
+/* and/or other materials provided with the distribution. */
+/* * None of the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission. */
+
+/* THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS "AS IS" AND */
+/* ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED */
+/* WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE */
+/* DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE */
+/* FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL */
+/* DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR */
+/* SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER */
+/* CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, */
+/* OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE */
+/* OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
+
+
 /* In this example, we learn the extended XOR with a 2-12-1 MLP */
 /* Therefore, we have 12*(2+1) + (12+1) = 48 parameters to find */
 
@@ -134,8 +158,8 @@ int main(int argc, char* argv[]) {
             gaussianDistribution(0.0,2*i+1,VARIANCE, 2*j+1,VARIANCE,pow(-1.0,i+j),100, samples);
 
    // Save the samples
-   std::cout << "Saving the input samples in Output/example-002-samples.data" << std::endl;
-   std::ofstream outfile("Output/example-002-samples.data");
+   std::cout << "Saving the input samples in example-002-samples.data" << std::endl;
+   std::ofstream outfile("example-002-samples.data");
    for(unsigned int j = 0 ; j < samples.size() ; j ++)
    {
        outfile << samples[j].x << "\t" << samples[j].y << "\t" << samples[j].z << std::endl;
@@ -247,8 +271,8 @@ int main(int argc, char* argv[]) {
    y_max = 6.0;
    int N = 100;
    int color;
-   std::cout << " Generating an output image in Output/example-002.ppm" << std::endl;
-   std::ofstream image("Output/example-002.ppm");
+   std::cout << " Generating an output image in example-002.ppm" << std::endl;
+   std::ofstream image("example-002.ppm");
    image << "P3" << std::endl << "# example-002.ppm" << std::endl;
    image << N << " " << N << std::endl;
    image << "255" << std::endl;
