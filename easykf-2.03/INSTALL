@@ -47,7 +47,9 @@ and install everything in $PREFIX_INSTALL/lib, $PREFIX_INSTALL/lib/pkgconfig, $P
 Packages manager
 ++++++++++++++++
 
-Packages for several distributions are provided.
+Some distribution dependent packages are provided in the RPMs subdirectory of the svn 
+
+https://code.google.com/p/easykf/
 
 Authors
 -------
