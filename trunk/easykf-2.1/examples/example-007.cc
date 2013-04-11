@@ -27,7 +27,8 @@
 #include <cmath>
 #include <iostream>
 #include <fstream>
-#include "ukf.h"
+
+#include <easykf.h>
 
 using namespace ukf::state;
 

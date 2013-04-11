@@ -27,9 +27,9 @@
 #include <cmath>
 #include <iostream>
 #include <fstream>
-#include "ukf.h"
-
 #include <sys/time.h>
+
+#include <easykf.h>
 
 using namespace ekf;
 

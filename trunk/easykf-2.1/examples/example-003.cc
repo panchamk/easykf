@@ -33,7 +33,8 @@
 #include <iostream>
 #include <fstream>
 #include <time.h>
-#include <ukf.h>
+
+#include <easykf.h>
 
 using namespace ukf::parameter;
 
