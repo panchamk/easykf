@@ -33,7 +33,7 @@
 #include <vector>
 #include <algorithm>
 
-#include <ukf.h>
+#include <easykf.h>
 
 #define VERBOSE true
 #define HIDDEN_LAYER_SIZE 12
