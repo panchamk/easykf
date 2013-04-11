@@ -55,7 +55,7 @@ INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/easykf.pc
 ###################################
 add_subdirectory (src)
 add_subdirectory (examples)
-add_subdirectory (doc)
+#add_subdirectory (doc)
 
 
 ###################################

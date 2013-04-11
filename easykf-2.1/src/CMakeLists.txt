@@ -32,4 +32,4 @@ add_library(
 	SHARED
 	pyeasykf.cpp
 )
-target_link_libraries(pyeasykf ${Boost_LIBRARIES} ${PYTHON_LIBS} "-lboost_python")
+target_link_libraries(pyeasykf ${Boost_LIBRARIES} ${PYTHON_LIBS} "-lboost_python" ${GSL_LIBRARIES})
