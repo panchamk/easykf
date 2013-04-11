@@ -18,6 +18,10 @@ FIND_PACKAGE( GSL REQUIRED )
 include_directories( ${GSL_INCLUDE_DIR})
 link_directories(${GSL_LINK_DIRECTORIES})
 
+FIND_PACKAGE(PkgConfig REQUIRED)
+pkg_check_modules(PYTHON python)
+include_directories(${PYTHON_INCLUDE_DIRS})
+
 ###################################
 # Some prefix definitions
 ###################################
