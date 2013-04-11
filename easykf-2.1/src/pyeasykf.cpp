@@ -14,17 +14,24 @@ namespace easykf {
 }
 
 
-BOOST_PYTHON_MODULE(pyeasykf)
+BOOST_PYTHON_MODULE(libpyeasykf)
 {
   ////////////////
   // ekf_types.h
 
   class_<ekf::EvolutionAnneal>("ekf_EvolutionAnneal", init<double, double, double>())
-    .def("updateEvolutionNoise", ekf::EvolutionAnneal::updateEvolutionNoise, "")
+    .def("updateEvolutionNoise", &ekf::EvolutionAnneal::updateEvolutionNoise, "")
     ;
 
   // Bindings for ekf.h
   // struct ekf::ekf_param, ekf::ekf_state
+  class_<ekf::ekf_param>("ekf_param", init<>())
+    .def_readwrite("evolution_noise", &ekf::ekf_param::evolution_noise)
+    .def_readwrite("observation_noise", &ekf::ekf_param::observation_noise)
+    .def_readwrite("n", &ekf::ekf_param::n)
+    .def_readwrite("no", &ekf::ekf_param::no)
+    .def_readwrite("observation_gradient_is_diagonal", &ekf::ekf_param::observation)
+    ;
   // def("ekf_param", ekf::ekf_param);
   // def("ekf_state", ekf::ekf_state);
 
