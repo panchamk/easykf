@@ -5,6 +5,8 @@ project (easykf)
 set(EASYKF_VERSION "2.1")
 set(PACKAGE_VERSION ${EASYKF_VERSION})
 
+set(CMAKE_BUILD_TYPE Release)
+
 # Adds the path to the FindGSL.cmake
 SET( CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules"
                        "${CMAKE_MODULE_PATH}" )

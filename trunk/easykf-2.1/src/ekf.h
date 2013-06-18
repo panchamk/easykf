@@ -125,8 +125,12 @@ namespace ekf
     gsl_vector_free(s.temp_no);
   }
 
-  template <typename FunctProcess, typename JacobianProcess, typename FunctObservation, typename JacobianObservation>
-    void ekf_iterate(ekf_param &p, ekf_state &s, FunctProcess f, JacobianProcess df, FunctObservation h, JacobianObservation dh, gsl_vector* yk)
+    void ekf_iterate(ekf_param &p, ekf_state &s, 
+		     void(*f)(gsl_vector*, gsl_vector*, gsl_vector*), 
+		     void(*df)(gsl_vector*, gsl_vector*, gsl_matrix*), 
+		     void(*h)(gsl_vector*, gsl_vector*, gsl_vector*), 
+		     void(*dh)(gsl_vector*, gsl_vector*, gsl_matrix*), 
+		     gsl_vector* yk)
   {
     /****************************/
     /***** Prediction step  *****/
@@ -134,7 +138,7 @@ namespace ekf
 
     // Compute the Jacobian of the evolution
     // Eq. 2.34
-    df(s.params, s.xk,s.Fxk);
+    df(s.params, s.xk, s.Fxk);
 
     // Compute the predicted state mean and covariance
     // Eq. 2.36

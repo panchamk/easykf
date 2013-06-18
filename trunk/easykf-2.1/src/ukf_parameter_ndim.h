@@ -39,7 +39,7 @@ namespace ukf
           * @short Allocation of the vectors/matrices and initialization
           *
           */
-        inline void ukf_init(ukf_param &p, ukf_state &s)
+        void ukf_init(ukf_param &p, ukf_state &s)
         {
             // Init the lambda
             p.lambda = p.alpha * p.alpha * (p.n + p.kpa) - p.n;
@@ -131,7 +131,7 @@ namespace ukf
           * @short Free of memory allocation
           *
           */
-        inline void ukf_free(ukf_param &p, ukf_state &s)
+        void ukf_free(ukf_param &p, ukf_state &s)
         {
             gsl_matrix_free(s.Kk);
             gsl_matrix_free(s.Kk_T);
@@ -173,8 +173,9 @@ namespace ukf
           * @short Iteration for the statistical linearization
           *
           */
-        template <typename FunctObj>
-                inline void ukf_iterate(ukf_param &p, ukf_state &s, FunctObj g, gsl_vector * xk, gsl_vector* dk)
+	void ukf_iterate(ukf_param &p, ukf_state &s, 
+			 void(*g)(gsl_vector*, gsl_vector*, gsl_vector*), 
+			 gsl_vector * xk, gsl_vector* dk)
         {
 
             // Here, we implement the UKF for parameter estimation in the vectorial case
@@ -313,8 +314,9 @@ namespace ukf
           * @short Evaluation of the output from the sigma points
           *
           */
-        template <typename FunctObj>
-                inline void ukf_evaluate(ukf_param &p, ukf_state &s, FunctObj g, gsl_vector * xk, gsl_vector * dk)
+      void ukf_evaluate(ukf_param &p, ukf_state &s, 
+			void(*g)(gsl_vector*, gsl_vector*, gsl_vector*), 
+			gsl_vector * xk, gsl_vector * dk)
         {
             // ************************************************** //
             // ************ Compute the sigma points ************ //

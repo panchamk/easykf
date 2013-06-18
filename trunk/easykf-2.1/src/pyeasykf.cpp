@@ -3,9 +3,6 @@
 
 using namespace boost::python;
 
-// On utilise des templates pour le xxx_iterate mais 
-// en pratrique on doit pouvoir avoir le type de notre fonction.
-
 namespace easykf {
 
   namespace bindings {
@@ -30,8 +27,17 @@ BOOST_PYTHON_MODULE(libpyeasykf)
     .def_readwrite("observation_noise", &ekf::ekf_param::observation_noise)
     .def_readwrite("n", &ekf::ekf_param::n)
     .def_readwrite("no", &ekf::ekf_param::no)
-    .def_readwrite("observation_gradient_is_diagonal", &ekf::ekf_param::observation)
+    .def_readwrite("observation_gradient_is_diagonal", &ekf::ekf_param::observation_gradient_is_diagonal)
     ;
+
+  class_<ekf::ekf_state>("ekf_state", init<>())
+    .def_readwrite("xk", &ekf::ekf_state::xk)
+    .def_readwrite("xkm", &ekf::ekf_state::xkm)
+    .def_readwrite("Pxk", &ekf::ekf_state::Pxk)
+
+    ;
+
+
   // def("ekf_param", ekf::ekf_param);
   // def("ekf_state", ekf::ekf_state);
 

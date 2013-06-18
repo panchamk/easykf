@@ -136,7 +136,7 @@ int main(int argc, char* argv[]) {
    p.evolution_noise = evolution_noise;
 
    p.observation_noise = 1e-1;
-   p.prior_pi = 1e-1;
+   p.prior_pi = 1.0;
 
    // Initialization of the state and parameters
    ukf_scalar_init(p,s);
