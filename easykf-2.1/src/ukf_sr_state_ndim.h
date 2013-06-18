@@ -66,7 +66,7 @@ namespace ukf
           * @short Allocation of the vectors/matrices and initialization
           *
           */
-        inline void ukf_init(ukf_param &p, ukf_state &s)
+        void ukf_init(ukf_param &p, ukf_state &s)
         {
             // Parameters for the sigma points of the process equation
             p.nbSamples = 2 * p.n + 1;
@@ -181,7 +181,7 @@ namespace ukf
           * @short Free of memory allocation
           *
           */
-        inline void ukf_free(ukf_param &p, ukf_state &s)
+        void ukf_free(ukf_param &p, ukf_state &s)
         {
             gsl_vector_free(s.xi);
             gsl_matrix_free(s.xi_prediction);
@@ -235,7 +235,7 @@ namespace ukf
           *
           */
         template <typename FunctProcess, typename FunctObservation>
-                inline void ukf_iterate(ukf_param &p, ukf_state &s, FunctProcess f, FunctObservation h, gsl_vector* yi)
+                void ukf_iterate(ukf_param &p, ukf_state &s, FunctProcess f, FunctObservation h, gsl_vector* yi)
         {
             int i,j;
 	    gsl_matrix_view mat_view;
@@ -506,7 +506,7 @@ namespace ukf
           *
           */
         template <typename FunctProcess, typename FunctObservation>
-                inline void ukf_evaluate(ukf_param &p, ukf_state &s, FunctProcess f, FunctObservation h, gsl_vector* yi)
+                void ukf_evaluate(ukf_param &p, ukf_state &s, FunctProcess f, FunctObservation h, gsl_vector* yi)
         {
 
             //          int i,j,k;

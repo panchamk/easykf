@@ -155,8 +155,9 @@ namespace ukf
          * @short Iteration for UKF for parameter estimation, in case of a scalar output
          *
          */
-        template <typename FunctObj>
-        inline void ukf_scalar_iterate(ukf_param &p, ukf_scalar_state &s, FunctObj g, gsl_vector * xk, double dk)
+        inline void ukf_scalar_iterate(ukf_param &p, ukf_scalar_state &s, 
+				       double(*g)(gsl_vector*, gsl_vector*), 
+				       gsl_vector * xk, double dk)
         {
             // Here, we implement the UKF for parameter estimation in the scalar case
             // The notations follow p93 of the PhD thesis of Van Der Merwe, "Sigma-Point Kalman Filters for Probabilistic Inference in Dynamic State-Space Models"
@@ -265,8 +266,9 @@ namespace ukf
         * @short Evaluation of the output from the sigma points
         *
         */
-        template <typename FunctObj>
-        inline void ukf_scalar_evaluate(ukf_param &p, ukf_scalar_state &s, FunctObj g, gsl_vector * xk, double &dk)
+        void ukf_scalar_evaluate(ukf_param &p, ukf_scalar_state &s, 
+				 double(*g)(gsl_vector*, gsl_vector*), 
+				 gsl_vector * xk, double &dk)
         {
             // ************************************************** //
             // ************ Compute the sigma points ************ //
